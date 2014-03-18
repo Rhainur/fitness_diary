@@ -1,0 +1,39 @@
+= form_for(@entry) do |f|
+  - if @entry.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@entry.errors.count, "error")
+        prohibited this entry from being saved:
+      %ul
+        - @entry.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :weightlifting
+    %br/
+    = f.check_box :weightlifting
+  .field
+    = f.label :table_tennis_hours
+    %br/
+    = f.number_field :table_tennis_hours
+  .field
+    = f.label :protein_intake
+    %br/
+    = f.number_field :protein_intake
+  .field
+    = f.label :ate_junk
+    %br/
+    = f.check_box :ate_junk
+  .field
+    = f.label :ate_too_much
+    %br/
+    = f.check_box :ate_too_much
+  .field
+    = f.label :weight
+    %br/
+    = f.text_field :weight
+  .field
+    = f.label :remarks
+    %br/
+    = f.text_area :remarks
+  .actions
+    = f.submit

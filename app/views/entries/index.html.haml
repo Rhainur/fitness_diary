@@ -1,0 +1,31 @@
+%h1 Listing entries
+%table
+  %thead
+    %tr
+      %th Date
+      %th Weightlifting
+      %th Table tennis hours
+      %th Protein intake
+      %th Ate junk
+      %th Ate too much
+      %th Weight
+      %th Remarks
+      %th
+      %th
+      %th
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %td= entry.created_at.strftime('%d %b')
+        %td= entry.weightlifting
+        %td= entry.table_tennis_hours
+        %td= entry.protein_intake
+        %td= entry.ate_junk
+        %td= entry.ate_too_much
+        %td= entry.weight
+        %td= entry.remarks
+        %td= link_to 'Show', entry
+        %td= link_to 'Edit', edit_entry_path(entry)
+        %td= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Entry', new_entry_path

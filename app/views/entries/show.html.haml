@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Weightlifting:
+  = @entry.weightlifting
+%p
+  %strong Table tennis hours:
+  = @entry.table_tennis_hours
+%p
+  %strong Protein intake:
+  = @entry.protein_intake
+%p
+  %strong Ate junk:
+  = @entry.ate_junk
+%p
+  %strong Ate too much:
+  = @entry.ate_too_much
+%p
+  %strong Weight:
+  = @entry.weight
+%p
+  %strong Remarks:
+  = @entry.remarks
+= link_to 'Edit', edit_entry_path(@entry)
+|
+\#{link_to 'Back', entries_path}
