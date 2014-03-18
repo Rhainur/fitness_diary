@@ -1,5 +1,5 @@
 %h1 Listing entries
-%table
+%table.table.table-bordered.table-striped.table-hover
   %thead
     %tr
       %th Date
@@ -16,14 +16,33 @@
   %tbody
     - @entries.each do |entry|
       %tr
-        %td= entry.created_at.strftime('%d %b')
-        %td= entry.weightlifting
-        %td= entry.table_tennis_hours
-        %td= entry.protein_intake
-        %td= entry.ate_junk
-        %td= entry.ate_too_much
-        %td= entry.weight
-        %td= entry.remarks
+        %td.text-center
+          = entry.created_at.strftime('%d %b')
+        %td.text-center
+          - if entry.weightlifting
+            %span.glyphicon.glyphicon-ok
+          - else
+            %span.glyphicon.glyphicon-remove
+        %td.text-center
+          = entry.table_tennis_hours
+        %td.text-center
+          = entry.protein_intake
+          g
+        %td.text-center
+          - if entry.ate_junk
+            %span.glyphicon.glyphicon-ok
+          - else
+            %span.glyphicon.glyphicon-remove
+        %td.text-center
+          - if entry.ate_too_much
+            %span.glyphicon.glyphicon-ok
+          - else
+            %span.glyphicon.glyphicon-remove
+        %td.text-center
+          = entry.weight
+          kg
+        %td
+          = entry.remarks
         %td= link_to 'Show', entry
         %td= link_to 'Edit', edit_entry_path(entry)
         %td= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }
