@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weightlifting: false
+  table_tennis_hours: 1
+  protein_intake: 1
+  ate_junk: false
+  ate_too_much: false
+  weight: 9.99
+  remarks: MyText
+
+two:
+  weightlifting: false
+  table_tennis_hours: 1
+  protein_intake: 1
+  ate_junk: false
+  ate_too_much: false
+  weight: 9.99
+  remarks: MyText
