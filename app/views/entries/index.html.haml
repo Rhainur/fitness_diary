@@ -7,6 +7,7 @@
       %th Table tennis hours
       %th Protein intake
       %th Ate junk
+      %th High carb intake
       %th Ate too much
       %th Weight
       %th Remarks
@@ -30,6 +31,11 @@
           g
         %td.text-center
           - if entry.ate_junk
+            %span.glyphicon.glyphicon-ok
+          - else
+            %span.glyphicon.glyphicon-remove
+        %td.text-center
+          - if entry.high_carb
             %span.glyphicon.glyphicon-ok
           - else
             %span.glyphicon.glyphicon-remove

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140318095922) do
+ActiveRecord::Schema.define(version: 20140319180623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140318095922) do
     t.text     "remarks"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "high_carb",          default: true
   end
 
 end
